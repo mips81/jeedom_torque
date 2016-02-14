@@ -1,0 +1,47 @@
+==== Configuration du plugin
+
+Le plugin ne comporte pas de configuration générale.
+
+Sur la page de configuration du plugin, vous pouvez trouver l'URL à indiquer à Torque pour utiliser Jeedom.
+
+image::../images/torque_1.png[Conf Torque]
+
+==== Vérification du bon fonctionnement de Torque
+
+Avant de rentrer l'URL Jeedom, il est utile de vérifier le bon fonctionnement de torque
+
+Vous avez besoin d'un connecteur OBD2, le plus simple est un Bluetooth (vérifiez que ce soit bien à base de ELM327)
+
+Si tout est ok, vous verrez les 4 icônes dans le coin supérieur gauche fixes (connexion GPS, téléphone, connexion OBD, réception données)
+
+Une fois que vous avez ces icônes fixes, on peut tester l'envoi de données
+
+
+==== Test d'envoi de données vers le serveur Torque
+
+Par défaut Torque propose un serveur avec un accès personnel pour voir les compteurs et tracés GPS.
+
+image::../images/torque_2.png[Conf Torque]
+
+Tester l'envoi de données avec ce serveur, cela validera que Torque envoit bien les coordonnées GPS et les compteurs choisis
+
+image::../images/torque_3.png[Conf Torque]
+
+Pour les compteurs, n'oubliez pas dans le menu "Enregistrement et upload des données" de faire votre sélection. Beaucoup de compteurs sont disponibles à chacun de choisir ceux qu'ils souhaitent.
+
+Pour les compteurs, Jeedom ajoutera une information à l'équipement pour chaque compteur envoyé.
+
+Parmis les compteurs utiles surtout en domotique : le statut de votre réservoir ou les kms restant. Intéressant pour s'envoyer une notification.
+
+
+==== Configuration de l'adresse Jeedom
+
+Une fois que vous avez valider l'envoi de données avec Torque, vous pouvez configurer l'adresse fournie sur la page de configuration du plugin_path
+
+image::../images/torque_4.png[Conf Torque]
+
+Vous devriez alors voir un équipement apparaitre qui portera l'identifiant Torque. Donc en cas d'id différent (deuxième téléphone pour madame par exemple) vous aurez un deuxième équipement.
+
+image::../images/torque_5.png[Conf Torque]
+
+Vous aurez une information par donnée envoyée : compteurs, geoloc et adresse email par exemple.

@@ -1,0 +1,9 @@
+==== Torque, récupération des données de l'application mobile
+
+Ce plugin permet de transformer Jeedom en serveur Torque pour lui envoyer les données du véhicule que monitore Torque.
+
+Une fois le plugin activé, celui-ci fournit une URL à renseigner dans Torque pour l'upload.
+
+Les équipements sont créés automatiquement par le plugin pour chaque Torque qui se connecte.
+
+Attention, pour information Torque est très bavard, il envoit une trame toutes les secondes. Cela peut avoir un impact suivant votre configuration Jeedom mais aussi sur votre batterie.

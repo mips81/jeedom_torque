@@ -1,0 +1,5 @@
+[panel,danger]
+.Je n'ai pas d'informations qui remontent
+--
+Vous pouvez vérifier dans les logs si des données sont recues. Une méthode aussi consiste à valider la configuration dans Torque et utiliser le serveur par défaut pour valider que les données sont bien transmises du téléphone.
+--
