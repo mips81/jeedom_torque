@@ -24,6 +24,9 @@ escaped="${escaped//\[/\\]}"
 escaped="${escaped//^/\\^}"
 escaped="${escaped//\$/\\\$}"
 
+# escape &
+escaped="${escaped//&/\\&}"
+
 # remove newlines
 escaped="${escaped//[$'\n']/}"
 
