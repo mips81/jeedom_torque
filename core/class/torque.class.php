@@ -29,7 +29,7 @@ class torque extends eqLogic {
 
   public static function dependancy_install() {
     $resource_path = realpath(dirname(__FILE__) . '/../../resources');
-    $url  = config::byKey('externalComplement') . '/core/api/jeeApi.php?api=' . config::byKey('api') . '&type=torque&';
+    $url  = config::byKey('externalComplement') . '/core/api/jeeApi.php\?api=' . config::byKey('api') . '\&type=torque\&';
     if (strpos($_SERVER['SERVER_SOFTWARE'],'Apache') !== false) {
       $server = 'apache';
     } else {
