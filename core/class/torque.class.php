@@ -29,13 +29,13 @@ class torque extends eqLogic {
 
   public static function dependancy_install() {
     $resource_path = realpath(dirname(__FILE__) . '/../../resources');
-    $url  = config::byKey('externalComplement') . '/core/api/jeeApi.php\?api=' . config::byKey('api') . '\&type=torque\&';
+    $url  = config::byKey('externalComplement') . '/core/api/jeeApi.php\?api=' . config::byKey('api') . '&type=';
     if (strpos($_SERVER['SERVER_SOFTWARE'],'Apache') !== false) {
       $server = 'apache';
     } else {
       $server = 'nginx'; //welldone !!!
     }
-    passthru('/bin/bash ' . $resource_path . '/reverse.sh ' . $resource_path . ' torque ' . $server . ' ' . $url . ' > ' . log::getPathToLog('torque_dep') . ' 2>&1 &');
+    passthru('/bin/bash ' . $resource_path . '/reverse.sh ' . escapeshellarg($resource_path) . ' torque ' . escapeshellarg($server) . ' ' . escapeshellarg($url) . ' > ' . log::getPathToLog('torque_dep') . ' 2>&1 &');
   }
 
     public static function apiTorque() {
