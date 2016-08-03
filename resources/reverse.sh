@@ -86,7 +86,7 @@ else
       echo "Ajout de la règle"
       #sudo sed -i '$ d' /etc/nginx/sites-available/jeedom_dynamic_rule
       sudo cat ${2}.conf >> /etc/nginx/sites-available/jeedom_dynamic_rule
-      sudo sed -i -e 's/###URL###/'${escaped}'/g' /etc/nginx/sites-available/jeedom_dynamic_rule
+      sudo sed -i -e "s%###URL###%$escaped%g" /etc/nginx/sites-available/jeedom_dynamic_rule
       #sudo echo "{" >> /etc/nginx/sites-available/jeedom_dynamic_rule
       sudo service nginx restart
     fi
@@ -103,7 +103,7 @@ else
     else
       echo "Ajout du fichier"
       sudo cp ${2}.conf $DIRECTORY
-      sudo sed -i -e "s%###URL###%${escaped}%g" ${DIRECTORY}/${2}.conf
+      sudo sed -i -e "s%###URL###%$escaped%g" ${DIRECTORY}/${2}.conf
       sudo service nginx restart
     fi
   fi
