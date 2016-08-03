@@ -48,7 +48,7 @@ if [ $3 == "apache" ]; then
     sudo cp apache.conf /etc/apache2/conf-available/${2}.jeedom.conf
     sudo sed -i -e "s%###URL###%$escaped%g" /etc/apache2/conf-available/${2}.jeedom.conf
   fi
-  sudo a2enconf ${2}
+  sudo a2enconf ${2}.jeedom.conf
   if [ $? -eq 0 ]
   then  
     echo "Activation dans la configuration ajouté"
