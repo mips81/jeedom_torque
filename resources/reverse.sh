@@ -52,8 +52,9 @@ if [ $3 == "apache" ]; then
   if [ $? -eq 0 ]
   then  
     echo "Activation dans la configuration ajouté"
-    else
-      echo "Erreur d'activation de la configuration ajouté"
+  else
+    echo "Erreur d'activation de la configuration ajouté"
+    exit $?
   fi
   sudo a2enmod rewrite
   if [ $? -eq 0 ]
@@ -61,6 +62,7 @@ if [ $3 == "apache" ]; then
     echo "Activation du moteur de de réécriture"
   else
     echo "Erreur d'activation du moteur de de réécriture"
+    exit $?
   fi
   echo "Vérification de la configuration ajouté"
   sudo apachectl configtest
@@ -70,6 +72,7 @@ if [ $3 == "apache" ]; then
       sudo apachectl graceful
     else
       echo "Erreur dans la configuration ajouté"
+      exit $?
     fi
 else
   FILE="/etc/nginx/sites-available/jeedom_dynamic_rule"
@@ -100,7 +103,7 @@ else
     else
       echo "Ajout du fichier"
       sudo cp ${2}.conf $DIRECTORY
-      sudo sed -i -e 's/###URL###/'${escaped}'/g' ${DIRECTORY}/${2}.conf
+      sudo sed -i -e "s%###URL###%${escaped}%g' ${DIRECTORY}/${2}.conf
       sudo service nginx restart
     fi
   fi
